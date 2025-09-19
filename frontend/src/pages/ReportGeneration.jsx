@@ -280,7 +280,9 @@ const ReportGeneration = () => {
                       </div>
                       {/* Download button now triggers Save As */}
                       <a
-                        href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/reports/files/${report.filename}`}
+                        // href={`${import.meta.env.VITE_API_URL || 'http://localhost:5000'}/reports/files/${report.filename}`}
+                        href={`${import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api$/, '') : 'http://localhost:5000'}/reports/files/${report.filename}`}
+
                         className="ml-2 text-blue-600 hover:text-blue-700"
                         download
                       >
